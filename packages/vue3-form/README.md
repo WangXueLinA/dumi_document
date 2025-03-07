@@ -4,6 +4,8 @@
 
 <!-- > vue3-form基架 -->
 
+> ![avatar](./src/image12.jpg)
+
 ## 安装
 
 ```sh

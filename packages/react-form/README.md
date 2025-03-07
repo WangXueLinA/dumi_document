@@ -4,6 +4,8 @@
 
 <!-- > 通用form组件 -->
 
+> ![avatar](./src/image12.jpg)
+
 ## 安装
 
 ```sh

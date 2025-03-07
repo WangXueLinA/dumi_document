@@ -13,5 +13,4 @@ registerComponents({
   input: ElInput,
   input2: Input,
 });
-console.log('ElButton', App);
 createApp(App).use(ElButton).mount('#dsc-app');
