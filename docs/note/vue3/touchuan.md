@@ -10,10 +10,10 @@ order: -93
 
 父组件传递给子组件的 非 props 声明的 Attributes（如 class、style、事件监听器等），会自动绑定到子组件的 根元素 上。
 
-```vue
+```html
 <!--父组件-->
 <script setup>
-import Child from './Child.vue';
+  import Child from './Child.vue';
 </script>
 
 <template>

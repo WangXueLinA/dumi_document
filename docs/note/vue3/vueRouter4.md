@@ -16,7 +16,7 @@ vue3 不再使用 new Router()创建实例，而是使用 createRouter 方法。
 并且路由模式也不是简单的传递 history、hash、abstract，而是通过 createWebHistory、createWebHashHistory、
 createMemoryHistory 并传递 base 来创建。
 
-```js
+```bash
 import { createMemoryHistory, createRouter } from 'vue-router';
 import { createApp } from 'vue';
 
@@ -156,18 +156,18 @@ useLink 函数用于创建一个响应式的 ref，该 ref 可以用来生成带
 
 比如封装一个链接
 
-```vue
+```html
 <script setup>
-import { useLink } from 'vue-router';
+  import { useLink } from 'vue-router';
 
-const props = defineProps({
-  to: {
-    type: [String, Object],
-    required: true,
-  },
-});
+  const props = defineProps({
+    to: {
+      type: [String, Object],
+      required: true,
+    },
+  });
 
-const { href, isActive, isExactActive, navigate } = useLink(props);
+  const { href, isActive, isExactActive, navigate } = useLink(props);
 </script>
 
 <template>
@@ -197,15 +197,15 @@ const {
 
 useRoute 函数返回当前路由的状态对象，你可以在组件的 setup 函数中直接使用它来访问当前路由的各种信息，如路径、查询参数等
 
-```vue
+```html
 <script setup>
-import { useRoute } from 'vue-router';
+  import { useRoute } from 'vue-router';
 
-const route = useRoute();
+  const route = useRoute();
 
-console.log(route.path);
-console.log(route.query);
-console.log(route.params.id);
+  console.log(route.path);
+  console.log(route.query);
+  console.log(route.params.id);
 </script>
 ```
 
@@ -215,24 +215,24 @@ Vue-Router4 中并没有删除$router 和 $route，在模板中我们仍然可�
 
 用于访问路由实例并实现编程式导航。
 
-```vue
+```html
 <script setup>
-import { useRouter } from 'vue-router';
+  import { useRouter } from 'vue-router';
 
-const router = useRouter();
+  const router = useRouter();
 
-// 常用方法示例
-const goHome = () => {
-  router.push('/'); // 导航到首页
-};
+  // 常用方法示例
+  const goHome = () => {
+    router.push('/'); // 导航到首页
+  };
 
-const replaceProfile = () => {
-  router.replace('/profile'); // 替换当前路由
-};
+  const replaceProfile = () => {
+    router.replace('/profile'); // 替换当前路由
+  };
 
-const goBack = () => {
-  router.go(-1); // 返回上一页
-};
+  const goBack = () => {
+    router.go(-1); // 返回上一页
+  };
 </script>
 ```
 
@@ -255,7 +255,7 @@ next 函数变为可选，支持以下返回值：
 - 路由地址（字符串或对象）：重定向
 - Error 实例：终止导航并触发 onError
 
-```js
+```bash
 import { createRouter } from 'vue-router'
 
 const router = createRouter({ ... })
@@ -281,7 +281,7 @@ routes: [
 
 组件内守卫组合式 API 支持
 
-```js
+```bash
 
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
 

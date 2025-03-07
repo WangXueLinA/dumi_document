@@ -192,24 +192,24 @@ setTimeout(() => {
 
 3. 第三方库集成：当第三方库直接修改 DOM 或数据时，确保 Vue 能感知到变化。
 
-```vue
+```html
 <template>
   <div ref="chartEl"></div>
 </template>
 
 <script setup>
-import { shallowRef, triggerRef, onMounted } from 'vue';
-import { drawChart } from 'third-party-chart-library';
+  import { shallowRef, triggerRef, onMounted } from 'vue';
+  import { drawChart } from 'third-party-chart-library';
 
-const chartEl = shallowRef(null);
-const chartData = shallowRef({ values: [1, 2, 3] });
+  const chartEl = shallowRef(null);
+  const chartData = shallowRef({ values: [1, 2, 3] });
 
-onMounted(() => {
-  drawChart(chartEl.value, chartData.value.values);
-  // 第三方库直接修改数据
-  chartData.value.values.push(4);
-  triggerRef(chartData); // 强制 Vue 更新相关组件
-});
+  onMounted(() => {
+    drawChart(chartEl.value, chartData.value.values);
+    // 第三方库直接修改数据
+    chartData.value.values.push(4);
+    triggerRef(chartData); // 强制 Vue 更新相关组件
+  });
 </script>
 ```
 

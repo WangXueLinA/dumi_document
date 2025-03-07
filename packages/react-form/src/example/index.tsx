@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 import { useMemo } from 'react';
-import { useSubmit } from '../example/hooks';
 import { Form, defineColumns } from '../index';
 import { defaultData, getList } from './api';
 import { ComponentMap } from './components';
+import { useSubmit } from './hooks';
 
 export default () => {
   const submit = useSubmit();

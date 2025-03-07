@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.2.0](https://github.com/WangXueLinA/dumi_document/compare/@wxl/general-form@0.1.0...@wxl/general-form@0.2.0) (2024-06-23)
+# [0.2.0](https://github.com/WangXueLinA/dumi_document/compare/@wxl/react-form@0.1.0...@wxl/react-form@0.2.0) (2024-06-23)
 
 ### Features
 

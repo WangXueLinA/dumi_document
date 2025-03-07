@@ -48,7 +48,7 @@ export function useWindowSize() {
 
 在组件中使用：
 
-```vue
+```html
 <template>
   <div>
     <p>Width: {{ width }}px</p>
@@ -57,18 +57,18 @@ export function useWindowSize() {
 </template>
 
 <script>
-import { useWindowSize } from './useWindowSize';
+  import { useWindowSize } from './useWindowSize';
 
-export default {
-  setup() {
-    const { width, height } = useWindowSize();
+  export default {
+    setup() {
+      const { width, height } = useWindowSize();
 
-    return {
-      width,
-      height,
-    };
-  },
-};
+      return {
+        width,
+        height,
+      };
+    },
+  };
 </script>
 ```
 
@@ -94,7 +94,7 @@ export function useFormInput(initialValue) {
 
 在组件中使用：
 
-```vue
+```html
 <template>
   <div>
     <input :value="value" @input="handleInput" />
@@ -103,17 +103,17 @@ export function useFormInput(initialValue) {
 </template>
 
 <script>
-import { useFormInput } from './useFormInput';
+  import { useFormInput } from './useFormInput';
 
-export default {
-  setup() {
-    const { value, handleInput } = useFormInput('');
+  export default {
+    setup() {
+      const { value, handleInput } = useFormInput('');
 
-    return {
-      value,
-      handleInput,
-    };
-  },
-};
+      return {
+        value,
+        handleInput,
+      };
+    },
+  };
 </script>
 ```

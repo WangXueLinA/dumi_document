@@ -295,7 +295,7 @@ vue create app-vue2
 
 然后修改 main.js，导出三个生命周期，
 
-```js
+```bash
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';

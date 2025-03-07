@@ -102,34 +102,34 @@ export default {
 
 场景：数据变化后初始化依赖 DOM 的第三方库（如 ECharts）。
 
-```vue
+```html
 <template>
   <div ref="chartContainer" style="width: 600px; height: 400px;"></div>
 </template>
 
 <script>
-import echarts from 'echarts';
+  import echarts from 'echarts';
 
-export default {
-  data() {
-    return { data: [] };
-  },
-  watch: {
-    data(newData) {
-      this.$nextTick(() => {
-        this.initChart(newData); // ✅ DOM 容器已更新
-      });
+  export default {
+    data() {
+      return { data: [] };
     },
-  },
-  methods: {
-    initChart(data) {
-      const chart = echarts.init(this.$refs.chartContainer);
-      chart.setOption({
-        /* 基于 data 的配置 */
-      });
+    watch: {
+      data(newData) {
+        this.$nextTick(() => {
+          this.initChart(newData); // ✅ DOM 容器已更新
+        });
+      },
     },
-  },
-};
+    methods: {
+      initChart(data) {
+        const chart = echarts.init(this.$refs.chartContainer);
+        chart.setOption({
+          /* 基于 data 的配置 */
+        });
+      },
+    },
+  };
 </script>
 ```
 

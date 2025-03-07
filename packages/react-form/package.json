@@ -1,8 +1,8 @@
 {
-  "name": "@xuelin/general-form",
+  "name": "@xuelin/react-form",
   "version": "0.2.0",
   "description": "通用form组件",
-  "homepage": "https://github.com/WangXueLinA/dumi_document/tree/master/packages/general-form",
+  "homepage": "https://github.com/WangXueLinA/dumi_document/tree/master/packages/react-form",
   "author": "xuelin",
   "main": "./lib/cjs",
   "module": "./lib/esm",

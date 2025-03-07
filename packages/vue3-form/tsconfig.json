@@ -19,7 +19,7 @@
     "experimentalDecorators": true,
     "jsx": "preserve",
     "paths": {
-      "@xuelin/general-form": ["./src"]
+      "@xuelin/vue3-form": ["./src"]
     }
   },
   "include": ["./src"]

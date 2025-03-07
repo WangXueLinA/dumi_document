@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
+import { ComponentMap } from '.';
 import { Common, defineColumns, Form } from '../../index';
-import { ComponentMap } from '../components';
 
 export type LayoutData = Omit<Common, 'field'> & { text?: boolean };
 

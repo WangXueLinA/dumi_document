@@ -16,13 +16,13 @@ order: -93
 - 只要父组件使用 v-model，Vue 会自动处理这两个名称的关联
 - 这种机制让 v-model 的使用更简洁，开发者只需遵守命名约定，无需手动定义父-子之间的协议
 
-```vue
+```html
 <!--父组件 (Parent.vue)-->
 <script setup>
-import { ref } from 'vue';
-import Child from './Child.vue';
+  import { ref } from 'vue';
+  import Child from './Child.vue';
 
-const message = ref('Hello');
+  const message = ref('Hello');
 </script>
 
 <template>
@@ -31,16 +31,16 @@ const message = ref('Hello');
 
 <!--子组件 (Child.vue)-->
 <script setup>
-// 🔴 必须使用 modelValue 接收父组件传递的值
-const props = defineProps(['modelValue']);
+  // 🔴 必须使用 modelValue 接收父组件传递的值
+  const props = defineProps(['modelValue']);
 
-// 🔴 必须声明 update:modelValue 事件通知父组件更新
-const emit = defineEmits(['update:modelValue']);
+  // 🔴 必须声明 update:modelValue 事件通知父组件更新
+  const emit = defineEmits(['update:modelValue']);
 
-const handleInput = (e) => {
-  // 通过约定的事件名 update:modelValue 通知父组件
-  emit('update:modelValue', e.target.value);
-};
+  const handleInput = (e) => {
+    // 通过约定的事件名 update:modelValue 通知父组件
+    emit('update:modelValue', e.target.value);
+  };
 </script>
 
 <template>
@@ -102,14 +102,14 @@ const model = defineModel();
 </template>
 ```
 
-```vue
+```html
 <!-- 父组件 -->
 
 <script setup>
-import { ref } from 'vue';
-import Child from './Child.vue';
+  import { ref } from 'vue';
+  import Child from './Child.vue';
 
-const message = ref('传统写法'); // 数据必须使用响应式数据（如 ref/reactive）
+  const message = ref('传统写法'); // 数据必须使用响应式数据（如 ref/reactive）
 </script>
 
 <template>

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true, // 生成声明文件
+    "declarationDir": "./lib", // 声明文件的路径
+    "emitDeclarationOnly": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "paths": {
+      "@xuelin/react-form": ["./src"]
+    }
+  },
+  "include": ["./src"]
+}

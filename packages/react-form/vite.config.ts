@@ -9,7 +9,7 @@ export default defineConfig(() => {
     plugins: [react(), build()],
     resolve: {
       alias: {
-        '@xuelin/general-form': path.resolve(__dirname, 'src/index.tsx'),
+        '@xuelin/react-form': path.resolve(__dirname, 'src/index.tsx'),
       },
     },
     css: {

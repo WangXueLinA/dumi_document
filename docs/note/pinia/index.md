@@ -140,12 +140,12 @@ defineStore 接收两个参数：
 
 我们可以在任意组件中引入定义的 store 来进行使用
 
-```vue
+```html
 <script setup>
-// 引入定义
-import useFormInfoStore from '@/store/formInfo';
-// 调用方法，返回store实例
-const formInfoStore = useFormInfoStore();
+  // 引入定义
+  import useFormInfoStore from '@/store/formInfo';
+  // 调用方法，返回store实例
+  const formInfoStore = useFormInfoStore();
 </script>
 ```
 
@@ -155,17 +155,17 @@ store 被实例化后，你就可以直接在 store 上访问 state、getters �
 
 store 是一个用 reactive 包裹的对象，这意味着不需要在 getter 之后写.value，但是，就像 setup 中的 props 一样，我们不能对其进行解构，如果我们想要提取 store 中的属性同时保持其响应式的话，我们需要使用 pinia 提供的 storeToRefs()函数，它将为响应式属性创建 refs。
 
-```vue
+```html
 <script setup>
-import { storeToRefs } from 'pinia';
-// 引入定义
-import useFormInfoStore from '@/store/formInfo';
-// 调用方法，返回store实例
-const formInfoStore = useFormInfoStore();
-​
-const { name, age } = formInfoStore; // ❌ 此时解构出来的name和age不具有响应式
-​
-const { name, age } = storeToRefs(formInfoStore); // ✅ 此时解构出来的name和age是响应式引用
+  import { storeToRefs } from 'pinia';
+  // 引入定义
+  import useFormInfoStore from '@/store/formInfo';
+  // 调用方法，返回store实例
+  const formInfoStore = useFormInfoStore();
+  ​
+  const { name, age } = formInfoStore; // ❌ 此时解构出来的name和age不具有响应式
+  ​
+  const { name, age } = storeToRefs(formInfoStore); // ✅ 此时解构出来的name和age是响应式引用
 </script>
 ```
 
@@ -206,45 +206,45 @@ export default useFormInfoStore;
 
 默认情况下，您可以通过 store 实例来直接读取和写入状态:
 
-```vue
+```html
 <template>
   <div>{{ formInfoStore.name }}</div>
 </template>
 
 <script lang="ts" setup>
-import useFormInfoStore from '@/store/formInfo';
-const formInfoStore = useFormInfoStore();
-console.log(formInfoStore.name); // 'Hello World'
+  import useFormInfoStore from '@/store/formInfo';
+  const formInfoStore = useFormInfoStore();
+  console.log(formInfoStore.name); // 'Hello World'
 </script>
 ```
 
 也可以结合 computed 获取。
 
-```vue
+```html
 <template>
   <div>{{ name }}</div>
 </template>
 
 <script lang="ts" setup>
-import useFormInfoStore from '@/store/formInfo';
-const formInfoStore = useFormInfoStore();
-const name = computed(() => formInfoStore.name);
+  import useFormInfoStore from '@/store/formInfo';
+  const formInfoStore = useFormInfoStore();
+  const name = computed(() => formInfoStore.name);
 </script>
 ```
 
 state 也可以使用解构，但使用解构会使其失去响应式，这时候可以用 pinia 的 storeToRefs。
 
-```vue
+```html
 <template>
   <div>{{ name }}</div>
 </template>
 
 <script lang="ts" setup>
-import useFormInfoStore from '@/store/formInfo';
-import { storeToRefs } from 'pinia';
+  import useFormInfoStore from '@/store/formInfo';
+  import { storeToRefs } from 'pinia';
 
-const formInfoStore = useFormInfoStore();
-const { name } = storeToRefs(formInfoStore);
+  const formInfoStore = useFormInfoStore();
+  const { name } = storeToRefs(formInfoStore);
 </script>
 ```
 
@@ -252,38 +252,38 @@ const { name } = storeToRefs(formInfoStore);
 
 pinia 还提供了几个常见场景的方法供我们使用来操作 state：$reset、$patch、$state、$subscribe：
 
-```vue
+```html
 <script setup>
-import useFormInfoStore from '@/store/formInfo';
-const formInfoStore = useFormInfoStore();
-​
-console.log(formInfoStore.name); // 'Hello World'
-// 直接修改state中的属性
-formInfoStore.age++;  // 19 一般不建议这么做
-​
-// 1.$reset 重置状态，将状态重置成为初始值
-formInfoStore.$reset();
-console.log(formInfoStore.age); // 18
-  
-// 2.$patch 支持对state对象的部分批量修改
-formInfoStore.$patch({
-    name: 'hello Vue',
-    age: 198
-});
-  
-// 3.$state 通过将其 $state 属性设置为新对象来替换 Store 的整个状态
-formInfoStore.$state = {
-  name: 'hello Vue3',
-  age: 100,
-  gender: '男'
-}
-​
-// 4.$subscribe 订阅store中的状态变化
-formInfoStore.$subscribe((mutation, state) => {
-  // 监听回调处理
-}, {
-  detached: true  // 💡如果在组件的setup中进行订阅，当组件被卸载时，订阅会被删除，通过detached:true可以让订阅保留
-})
+  import useFormInfoStore from '@/store/formInfo';
+  const formInfoStore = useFormInfoStore();
+  ​
+  console.log(formInfoStore.name); // 'Hello World'
+  // 直接修改state中的属性
+  formInfoStore.age++;  // 19 一般不建议这么做
+  ​
+  // 1.$reset 重置状态，将状态重置成为初始值
+  formInfoStore.$reset();
+  console.log(formInfoStore.age); // 18
+    
+  // 2.$patch 支持对state对象的部分批量修改
+  formInfoStore.$patch({
+      name: 'hello Vue',
+      age: 198
+  });
+    
+  // 3.$state 通过将其 $state 属性设置为新对象来替换 Store 的整个状态
+  formInfoStore.$state = {
+    name: 'hello Vue3',
+    age: 100,
+    gender: '男'
+  }
+  ​
+  // 4.$subscribe 订阅store中的状态变化
+  formInfoStore.$subscribe((mutation, state) => {
+    // 监听回调处理
+  }, {
+    detached: true  // 💡如果在组件的setup中进行订阅，当组件被卸载时，订阅会被删除，通过detached:true可以让订阅保留
+  })
 </script>
 ```
 
@@ -346,7 +346,7 @@ export default useFormInfoStore;
 
 在使用时，我们可以直接在 store 实例上面访问 getter:
 
-```vue
+```html
 <template>
   <div>The person is Man: {{ formInfoStore.isMan }} or is Woman: {{ formInfoStore.isWoman }}</div>
 </tempalte>
@@ -385,7 +385,7 @@ export default useFormInfoStore;
 
 在组件中使用时即可传入对应参数，注意，在这种方式时，getter 不再具有缓存性
 
-```vue
+```html
 <template>
   <div>The person is larger than 18 years old? {{ formInfoStore.isLargeBySpecialAge(18) }}</div>
 </tempalte>
@@ -488,10 +488,11 @@ unsubscribe()
 
 和$subscribe 类似，在组件中使用时，组件卸载，订阅也会被删除，如果希望保留的话，需要传入 true 作为第二个参数。
 
-```js
+```html
 <script setup>
-  import useFormInfoStore from '@/store/formInfo'; const formInfoStore =
-  useFormInfoStore(); ​ formInfoStore.$onAction(callback, true);
+  import useFormInfoStore from '@/store/formInfo';
+  const formInfoStore = useFormInfoStore(); ​
+  formInfoStore.$onAction(callback, true);
 </script>
 ```
 

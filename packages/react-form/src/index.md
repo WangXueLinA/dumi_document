@@ -1,9 +1,9 @@
 ---
-title: general-form
+title: react-form
 toc: content
 
 group:
-  title: general-form
+  title: react-form
 ---
 
 <embed src="../README.md" ></embed>

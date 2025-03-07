@@ -14,20 +14,20 @@ Vue2 中的通信方式，包括父子组件、兄弟组件、跨层级组件等
 
 Props 向下传递数据
 
-```vue
+```html
 <!-- 父组件 Parent.vue -->
 <template>
   <Child :message="parentMsg" />
 </template>
 
 <script>
-import Child from './Child.vue';
-export default {
-  components: { Child },
-  data() {
-    return { parentMsg: '来自父组件的数据' };
-  },
-};
+  import Child from './Child.vue';
+  export default {
+    components: { Child },
+    data() {
+      return { parentMsg: '来自父组件的数据' };
+    },
+  };
 </script>
 
 <!-- 子组件 Child.vue -->
@@ -36,9 +36,9 @@ export default {
 </template>
 
 <script>
-export default {
-  props: ['message'],
-};
+  export default {
+    props: ['message'],
+  };
 </script>
 ```
 
@@ -532,7 +532,7 @@ ref 被用来给元素或子组件注册引用信息（id 的替代者）
 
 - 获取：`this.$refs.xxx`
 
-```vue
+```html
 <template>
   <div>
     <h1 v-text="msg" ref="title"></h1>
@@ -542,24 +542,24 @@ ref 被用来给元素或子组件注册引用信息（id 的替代者）
 </template>
 
 <script>
-import School from './components/School';
+  import School from './components/School';
 
-export default {
-  name: 'App',
-  components: { School },
-  data() {
-    return {
-      msg: '欢迎学习Vue！',
-    };
-  },
-  methods: {
-    showDOM() {
-      console.log(this.$refs.title); // 真实DOM元素
-      console.log(this.$refs.btn); // 真实DOM元素
-      console.log(this.$refs.sch); // School组件的实例对象（vc）
+  export default {
+    name: 'App',
+    components: { School },
+    data() {
+      return {
+        msg: '欢迎学习Vue！',
+      };
     },
-  },
-};
+    methods: {
+      showDOM() {
+        console.log(this.$refs.title); // 真实DOM元素
+        console.log(this.$refs.btn); // 真实DOM元素
+        console.log(this.$refs.sch); // School组件的实例对象（vc）
+      },
+    },
+  };
 </script>
 ```
 

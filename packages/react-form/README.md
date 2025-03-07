@@ -1,4 +1,4 @@
-# 通用 form 组件
+# 通用 react-form 组件
 
 维护人： xuelin
 
@@ -7,9 +7,9 @@
 ## 安装
 
 ```sh
-npm i @xuelin/general-form
+npm i @xuelin/react-form
 or
-yarn add @xuelin/general-form
+yarn add @xuelin/react-form
 ```
 
 ## API
@@ -157,7 +157,7 @@ export type DynamicParameter = {
 创建 Form 实例，用于管理所有数据状态。
 
 ```js
-import { useForm } from '@xuelin/general-form';
+import { useForm } from '@xuelin/react-form';
 
 export default () => {
   const form = useForm();
@@ -172,7 +172,7 @@ export default () => {
 
 ```js
 import React from 'react';
-import { useFormInstance, useForm } from '@xuelin/general-form';
+import { useFormInstance, useForm } from '@xuelin/react-form';
 
 const Sub = () => {
   const form = useFormInstance();
@@ -196,7 +196,7 @@ export default () => {
 用于直接获取 form 中字段对应的值。通过该 Hooks 可以触发当前组件的更新
 
 ```js
-import { useWatch, useForm, FormItem, Form } from '@xuelin/general-form';
+import { useWatch, useForm, FormItem, Form } from '@xuelin/react-form';
 
 const Demo = () => {
   const form = useForm();

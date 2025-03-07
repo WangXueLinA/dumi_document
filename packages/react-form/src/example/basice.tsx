@@ -1,9 +1,9 @@
 import { Input, Radio } from 'antd';
 
-import { useSubmit } from '../example/hooks';
 import { Form, FormItem } from '../index';
 import { defaultData, getList } from './api';
 import { DatePicker, HotSelect } from './components';
+import { useSubmit } from './hooks';
 
 const RadioGroup = Radio.Group;
 const isShow = {
