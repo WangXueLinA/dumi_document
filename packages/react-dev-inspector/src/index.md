@@ -10,5 +10,4 @@ group:
 
 ## DEMO
 
-<code src="./demo/index.tsx" ></code>
 <embed src="../CHANGELOG.md"></embed>

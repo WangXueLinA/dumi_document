@@ -611,7 +611,11 @@ umd 格式是一种既可以在浏览器环境下使用，也可以在 node 环�
 });
 ```
 
-为什么 qiankun 要求子应用打包为 umd 库格式呢？主要是为了主应用能够拿到子应用在 入口文件 导出的 生命钩子函数，这也是主应用和子应用之间通信的关键
+## 为啥 libraryTarget 用 umd 格式？
+
+这是为了在 qiankun 架构下让主应用在执行微应用的 js 资源时可以通过 eval，将 window 绑定到一个 Proxy 对象上，防止污染全局变量，方便对脚本的 window 相关操作做劫持处理，达到子应用的脚本隔离
+
+umd 通用模块定义规范，兼容性更高，模块定义的跨平台解决方案，通俗的理解就是可以让代码在 nodejs 和浏览器环境中都可以运行
 
 ```js
 export async function bootstrap(app) {
@@ -767,4 +771,131 @@ console.log('外部window.sex=>1', window.sex); // 男
   console.log('修改后proxy2的sex', window.sex); // 111
 })(proxy2.proxy);
 console.log('外部window.sex=>2', window.sex); // 男
+```
+
+## 主应用和子应用通信
+
+### 通过 props 传递通信
+
+主应用通过注册子应用时传递 props，子应用在生命周期钩子中接收并使用。
+
+```js
+// 主应用注册子应用
+import { registerMicroApps, start } from 'qiankun';
+
+registerMicroApps([
+  {
+    name: 'vueApp3',
+    entry: '//localhost:8081',
+    container: '#container',
+    activeRule: '/app-vue3',
+    props: {
+      data: '主应用数据vue3',
+      onEvent: (data) => console.log('子应用触发事件vue3:', data),
+    },
+  },
+]);
+
+start();
+```
+
+子应用代码示例（Vue）：
+
+```javascript
+// 子应用入口文件（main.js）
+let instance = null;
+
+function render(props) {
+  const { container, data, onEvent } = props;
+  console.log(data); // "主应用数据vue3"
+  console.log(onEvent); // (data) => {…}
+
+  instance = new Vue({
+    el: container ? container.querySelector('#app') : '#app',
+    mounted() {
+      // 发送数据给主应用
+      onEvent('子应用数据');
+    },
+    template: '<div>收到主应用数据: {{ data }}</div>',
+    data: { data },
+  });
+}
+
+export async function mount(props) {
+  render(props);
+}
+```
+
+### initGlobalState 全局状态通信
+
+通过 qiankun 提供的 API 在全局共享状态，应用间可监听和修改状态。
+
+主应用代码：
+
+```javascript
+import { initGlobalState } from 'qiankun';
+
+// 初始化全局状态
+const actions = initGlobalState({
+  message: '初始消息',
+});
+
+// 监听状态变化
+actions.onGlobalStateChange((state, prevState) => {
+  console.log('主应用react收到状态:', state);
+});
+
+// 更新状态
+actions.setGlobalState({ message: '主应用react要发新消息' });
+```
+
+子应用代码：
+
+```javascript
+// 子应用入口文件
+export async function mount(props) {
+  // 获取全局状态
+  props.onGlobalStateChange((state, prevState) => {
+    console.log('子应用收到react状态:', state);
+  });
+
+  // 更新全局状态
+  props.setGlobalState({ message: '子应用vue3更新消息' });
+}
+```
+
+### LocalStorage/SessionStorage
+
+通过 localStorage 存储数据，结合 storage 事件监听变化。
+
+🔴 注意：在微前端架构中，多个子应用运行在同一浏览器上下文中，共享 localStorage、sessionStorage 和 window 等全局资源。若直接使用原生存储 API 会导致：
+
+| 问题场景     | 具体表现                                                                         |
+| ------------ | -------------------------------------------------------------------------------- |
+| Key 命名冲突 | 不同子应用使用相同 Key 存储数据，导致数据覆盖（如多个应用都使用 theme 作为 Key） |
+| 数据污染     | 主应用和子应用、子应用之间的数据互相干扰，引发不可预期的行为                     |
+| 清理困难     | 无法安全清理单个应用的数据（如 localStorage.clear() 会删除所有应用的数据）       |
+
+主应用代码：
+
+```javascript
+// 主应用写入数据
+localStorage.setItem('shared-data', JSON.stringify({ key: 'value' }));
+
+// 监听数据变化
+window.addEventListener('storage', (e) => {
+  if (e.key === 'shared-data') {
+    console.log('主应用收到新数据:', JSON.parse(e.newValue));
+  }
+});
+```
+
+子应用代码：
+
+```javascript
+// 子应用读取数据
+const data = JSON.parse(localStorage.getItem('shared-data'));
+
+// 子应用修改数据
+localStorage.setItem('shared-data', JSON.stringify({ key: 'new-value' }));
 ```

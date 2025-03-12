@@ -11,5 +11,3 @@ npm i @xuelin/aes-des-secret
 or
 yarn add @xuelin/aes-des-secret
 ```
-
-## API
