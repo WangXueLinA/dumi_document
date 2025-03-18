@@ -427,3 +427,5 @@ module.exports = smp.wrap({
 运行 Webpack 构建后，终端会显示类似结果
 
 <ImagePreview src="/images/js/image19.jpg"></ImagePreview>
+
+<BackTop></BackTop>

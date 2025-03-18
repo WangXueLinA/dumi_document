@@ -111,7 +111,7 @@ body {
       margin: auto;
       background-size: 40px 40px;
       background-image: // url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADGklEQVRYR81X32vTYBQ999s6mFjQgQ+DrbHiVFZYU4cDcQ/6pGhTFVYFEXGi82H+Bz448UnEF1Fx9ccEEcXpZE3d5tP2ooKiTacTHaLNpigMHDgnU9tcSbrWrkwWR0sbyEOSe885ObnfvV8IRT6oyPwoLQHBx+OVM5WJvSyEVAhnBOjt7yU/+/rr6r6l8TMO+F/EN0JQhICqQpD/xaRpcpAc9tS+M+9lBCia/oqBamK+zeDuQogQZaKJk3wcQjxSva7tGQGB2Ke1zIk3DNyMyNL+QpCnMQOaPsDAVuGAp9cjvbYc8Ec/bCYSg0zoiHilk1tHxqsqEsYlML4kjIpT/eurJxRNPweQU5VdrWaOEo1fgKAVbBgXIz73kF3R/ph+ghgdzMYWM29eAWlBJqgZaFlFYtC6nhWpaDqnSGlIlV1WjJ3DloDNgyNLncudqgX//Ucg3LxuStHGuhi8pqKCW3rqV342rwFjRznKm+/LNaN2yC237ThgF2wxcfMLeP6+ncrKzoPoKTGeLQbYbg4TNoC5iZPJY5HGVRdSNZAWYBclD3FzBQzrR8hACAKdzBzKA/4/IYioDQaOskBbpEG6PO8qKKSAEi3CnEb0Pw4oMf0OmKbTDWqh3Lw6EIiNBZi5lxh3wz4puBD5ovqAMvxhHSdFKxE1CQe3m/07TeTX4lcJdAhE+1Sv65Z5P/ByvIGTRowIZ9igbtXnmrOsbTvgj+kHBNMuBu9OdVw8EeU4nC1A0cYmAHZOTRrLhra4Z8ywnSN6vZHAFTA2WnnMfQB3qz73ddsOZM8CACFDIPSgQXqebXEgqgeZcAeEe6pXasm1f8ew3igMtAHWac0Uc/jYdyAaP0xEBwFsmgUPqbJ0NE2UKj4EGcahiOzuyhagaHpnmtgcVgTcCMuua7YdyAHbA3ArQNscVFbb4635aD6fnYaTvxxi9UNP7ddMXaRWVBdAcaLk6bDXPZCNZ9uBXEsDUX1T2Cc9yjig6Z0EHg3LK8/aqf6MwJKchkXfks1+0+JtSq3qLPa23BRR1B+T/6nkfMaW1r9hPt/MLtYfTLEpP+T9FNoAAAAASUVORK5CYII='),
-        url('../public/h2.gif');
+        url('../public/banner4.gif');
     }
   }
 
@@ -200,6 +200,221 @@ body {
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABRklEQVRYR2NkGGDAOMD2M4w6YDQERkNg+ITAppcfY/8zMv3wF+NdTUrZQpUQ2PT6cz8Dw/8CkMWMDIwNvqK8jcQ6gmIHNN19EaXPx1XPyMCghrCUKcpPlGc5MY6gyAE+Fx52MjL8j3cU5a1UYWXtZGBkEAVb+p8hxU+Mby5NHQCxnKEMaskzJ37uFmUetkmMjAzrfUX4woixHBJlZAA0y2EmPPYU4enLkhGeQIqRJDsAh+UgO7duNpD3IcVykkOA2paT5ABaWE60A2hlOdEO8D3/4CMDIyMfWvySFefoaYSoROh74eFXBgYGLiTNVLGc+BC48PAnAwMDG9QBVLOcaAd8P5ox+x/jf5AjGLgYfnwnKqv9/8/PwPO/kFF/MSj0cAKiouD/0bgYoixFU8RovWgJIX1EOYCQIZTIjzpgNARGQ2DAQwAAvHBaIdB7zxsAAAAASUVORK5CYII=');
       animation: h3AnimationAfter 2s infinite alternate;
     }
+  }
+
+  .ant-float-btn-circle {
+    height: 80px;
+    width: 80px;
+  }
+
+  .float-button-backTop {
+    width: 80px;
+    height: 93px;
+    position: absolute;
+    left: 0;
+    top: -16px;
+  }
+
+  .nav {
+    /* 对导航栏位置进行定位处理，方便后续的图标位置的设置 */
+    position: fixed;
+    top: 90px;
+    width: 80px;
+    height: 600px;
+    // background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    // color: #fff;
+    // background-image: url('../public/sideBg.jpg');
+    background-color: rgba(182, 177, 177, 0.3);
+  }
+
+  .nav ul {
+    display: flex;
+    height: 560px;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav ul li {
+    line-height: 80px;
+    height: 80px;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav ul li span {
+    /* 进行定位，使之通过span元素带动矢量图标进行水平垂直到中心位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 9px;
+    border-radius: 50%;
+    /* 设置鼠标移入的样式 */
+    cursor: pointer;
+    /* 设置动画过度事件以及延迟 */
+    transition: 0.5s;
+    transition-delay: 0.1s;
+    position: relative;
+    width: 60px;
+    height: 60px;
+
+    div {
+      position: absolute;
+      left: -44px;
+      font-size: 16px;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s ease-in-out;
+      color: hotpink;
+    }
+
+    .active-div {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: opacity 0.6s ease-in-out;
+      // 放大
+    }
+
+    .active-image {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .inactive-image {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  /* 下面是针对选中效果做的样式处理 */
+  .nav ul li.active span {
+    /* 设置了一开始的背景颜色，后面会被取代，设置了点击的时候会向上移动 */
+    background: orange;
+    transform: translateX(44px);
+    transition-delay: 0.1s;
+    position: relative;
+
+    img {
+      transform: scale(1.5);
+      border-radius: 0;
+      position: absolute;
+      left: 10px;
+    }
+  }
+
+  .nav ul li:not(.active) span {
+    img {
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      &:hover {
+        animation: spin 2s linear infinite;
+      }
+    }
+  }
+
+  .nav ul li span::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: orange;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0s;
+  }
+  .nav ul li span::before {
+    opacity: 0.5;
+    transition-delay: 0.25s;
+  }
+  /* 这里将i元素设置的颜色显示出来 这两个样式块中都使用了 background: var(--clr); 属性，可以将背景颜色设置为
+     --clr 变量所表示的值。这种使用自定义变量的方式，可以在代码中统一定义颜色值，以便在需要时进行统一更改。*/
+  .nav ul li.active span {
+    background: #f7f9fb;
+  }
+
+  .nav ul li span::before {
+    background: #f7f9fb;
+  }
+  /* 背景园设置 */
+  .indicator {
+    /* 这里进行了定位，并且设置了背景园的位置，同时将圆的背景颜色与背景颜色设为一致，会形成那种向下突兀的圆形，并且加入了动画 */
+    position: absolute;
+    top: 24px;
+    left: 48px;
+    width: 70px;
+    height: 70px;
+    background: #f7f9fb;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  // /* 设置左边半弧 */
+  // .indicator::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -26px;
+  //   left: 36px;
+  //   width: 5px;
+  //   height: 10px;
+  //   background: transparent;
+  //   border-radius: 50%;
+  //   box-shadow: 20.5px 19px 0 4px #fff;
+  // }
+  // /* 设置右边半弧 */
+  // .indicator::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50px;
+  //   left: 36px;
+  //   width: 5px;
+  //   height: 10px;
+  //   background: transparent;
+  //   border-radius: 50%;
+  //   box-shadow: 20px 19px 0 4px #fff;
+  // }
+
+  .nav {
+    // 定义公共变量
+    @item-width: 80px;
+
+    // 使用循环生成样式
+    .loop-indicator(@n, @i: 1) when (@i <= @n) {
+      li:nth-child(@{i}).active ~ .indicator {
+        transform: translateY(calc(@item-width * (@i - 1)));
+      }
+      .loop-indicator(@n, (@i + 1)); // 递归调用
+    }
+
+    // 调用循环 (假设有5个菜单项)
+    .loop-indicator(7);
   }
 }
 

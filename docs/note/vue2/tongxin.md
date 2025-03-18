@@ -626,3 +626,5 @@ export default {
   </Child>
 </template>
 ```
+
+<BackTop></BackTop>

@@ -129,9 +129,7 @@ formData.append('userId', '123'); // 添加普通字段
 
 ## 单文件上传
 
-<video width="500" height="350" controls>
-    <source src="/mp4/single-file.mp4" type="video/mp4">
-</video>
+<Player src='/mp4/single-file.mp4'></Player>
 
 ### 前端代码
 
@@ -258,9 +256,7 @@ app.listen(PORT, () => {
 
 ## 多文件上传
 
-<video width="500" height="350" controls>
-    <source src="/mp4/mul-file.mp4" type="video/mp4">
-</video>
+<Player src='/mp4/mul-file.mp4'></Player>
 
 ### 前端代码
 
@@ -841,3 +837,5 @@ app.listen(3000, () => {
   console.log('app starting at port 3000');
 });
 ```
+
+<BackTop></BackTop>

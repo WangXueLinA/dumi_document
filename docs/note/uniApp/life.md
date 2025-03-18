@@ -56,13 +56,15 @@ toc: content
 - 当你在浏览器离开页面，去查看其它页面，或者其它应用会触发`onHide`，在回来查看该页面时触发`onShow` ，打印`App Hide`，`App Show`
 - 我们手动把`onShow`方法里面的`console.log(‘App Show’) `改为`consol.log(‘App Show’) `去掉一个`e`字母，这样会导致报错，这个时候我们`onError`方法就可以监听到错误
 
-**注意**
+<Alert>
 
 - **应用生命周期仅可在`App.vue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在 API `uni.getLaunchOptionsSync`获取，[详见(opens new window)](https://uniapp.dcloud.net.cn/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)
-- onlaunch 里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942(opens new window)](https://ask.dcloud.net.cn/article/35942)
+- 应用启动参数，可以在 API `uni.getLaunchOptionsSync`获取，请参考[https://uniapp.dcloud.net.cn/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync](https://uniapp.dcloud.net.cn/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)
+- onlaunch 里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - `App.vue` 不能写模板
 - onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo）
+
+</Alert>
 
 ### 页面生命周期
 
@@ -134,3 +136,5 @@ tabbar 的页面展现过一次后就保留在内存中，再次切换 tabbar �
 | updated       | 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。                                                   | 仅 H5 平台支持 |          |
 | beforeDestroy | 实例销毁之前调用。在这一步，实例仍然完全可用。                                                                        |                |          |
 | destroyed     | Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。      |                |          |
+
+<BackTop></BackTop>

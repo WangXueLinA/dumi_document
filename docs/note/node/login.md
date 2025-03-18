@@ -422,3 +422,5 @@ router.get('/protected', authMiddleware, async (ctx) => {
 app.use(router.routes());
 app.listen(3000, () => console.log('Koa server running on port 3000'));
 ```
+
+<BackTop></BackTop>

@@ -118,7 +118,7 @@ let arr = createArray('a', 'b', 'c');
 arr[-1]; // c
 ```
 
-注意：如果一个属性不可配置（configurable）且不可写（writable），则 Proxy 不能修改该属性，否则会报错
+<Alert message='如果一个属性不可配置（configurable）且不可写（writable），则 Proxy 不能修改该属性，否则会报错'></Alert>
 
 ```js
 const target = Object.defineProperties(
@@ -196,7 +196,8 @@ proxy.foo = 'baz';
 proxy.foo; // "bar"
 ```
 
-注意，严格模式下，set 代理如果没有返回 true，就会报错
+<Alert message='严格模式下，set 代理如果没有返回 true，就会报错
+'></Alert>
 
 ```js
 'use strict';
@@ -236,7 +237,7 @@ delete proxy._prop;
 // Error: 无法删除私有属性
 ```
 
-注意，目标对象自身的不可配置（configurable）的属性，不能被 deleteProperty 方法删除，否则报错
+<Alert message="目标对象自身的不可配置（configurable）的属性，不能被 deleteProperty 方法删除，否则报错"></Alert>
 
 ### 取消代理
 
@@ -322,3 +323,5 @@ function set(target, key, value, receiver) {
 ```
 
 观察者函数都放进 Set 集合，当修改 obj 的值，在会 set 函数中拦截，自动执行 Set 所有的观察者
+
+<BackTop></BackTop>

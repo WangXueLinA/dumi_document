@@ -318,3 +318,5 @@ const props = withDefaults(defineProps<Props>(), {
 2. TypeScript 类型安全
 
 确保默认值与 TypeScript 类型定义一致，避免类型错误。
+
+<BackTop></BackTop>

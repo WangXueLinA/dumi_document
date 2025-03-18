@@ -68,3 +68,5 @@ const { location, updateLocation } = inject('location');
 - 跨多层组件传递数据（如主题、用户信息）。
 - 避免 Props 逐层传递（简化深嵌套组件通信）。
 - 插件/组件库开发（提供全局配置或方法）。
+
+<BackTop></BackTop>

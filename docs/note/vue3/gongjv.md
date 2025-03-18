@@ -14,7 +14,8 @@ title: 工具函数
 - 作用：检查一个值是否为 ref 对象。
 - 基本语法：isRef(value)
 - 场景：当需要判断变量是否为 ref 时，例如处理可能被 ref 包裹的值。
-- 注意：ref 在 reactive 对象中会被自动解包，直接访问属性时不再是 ref。
+
+<Alert message="ref 在 reactive 对象中会被自动解包，直接访问属性时不再是 ref。"></Alert>
 
 ```js
 import { ref, isRef, reactive } from 'vue';
@@ -130,7 +131,8 @@ console.log(unref(obj)); // 返回 obj 自身（无法解包对象）
 - 作用：检查对象是否是 reactive 创建的响应式代理。
 - 基本语法：isReactive(value)
 - 场景：判断对象是否经过 reactive 处理，常用于组合式函数参数校验。
-- 注意：若对象被 readonly 包裹但原始对象是 reactive，则 isReactive 仍为 true。
+
+<Alert message='若对象被 readonly 包裹但原始对象是 reactive，则 isReactive 仍为 true。'></Alert>
 
 ```js
 import { reactive, isReactive, readonly } from 'vue';
@@ -148,7 +150,8 @@ console.log(isReactive(readOnlyProxy)); // true（原始对象是reactive）
 - 作用：检查对象是否是 readonly 创建的只读代理。
 - 基本语法：isReadonly(value)
 - 场景：确保对象不可变，防止意外修改。
-- 注意：readonly 代理的原始对象可以是普通对象或 reactive 对象。
+
+<Alert message='readonly 代理的原始对象可以是普通对象或 reactive 对象。'></Alert>
 
 ```javascript
 import { reactive, readonly, isReadonly } from 'vue';
@@ -166,7 +169,8 @@ console.log(isReadonly(proxy)); // false
 - 作用：检查对象是否是 reactive 或 readonly 创建的代理。
 - 基本语法：isProxy(value)
 - 场景：通用检查对象是否为响应式（无论是可读还是只读）。
-- 注意：同时满足 isReactive 或 isReadonly 时，isProxy 为 true。
+
+<Alert message='同时满足 isReactive 或 isReadonly 时，isProxy 为 true。'></Alert>
 
 ```javascript
 import { reactive, readonly, isProxy } from 'vue';
@@ -178,3 +182,5 @@ const readOnlyProxy = readonly(raw);
 console.log(isProxy(reactiveProxy)); // true
 console.log(isProxy(readOnlyProxy)); // true
 ```
+
+<BackTop></BackTop>

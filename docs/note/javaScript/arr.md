@@ -174,7 +174,7 @@ new Array(3).fill(7);
 // ['a', 7, 'c']
 ```
 
-注意，如果填充的类型为对象，则是浅拷贝
+<Alert message="如果填充的类型为对象，则是浅拷贝"></Alert>
 
 ### toReversed，toSorted，toSpliced
 
@@ -218,3 +218,5 @@ const splicedNumbers = numbers.toSpliced(1, 2, 9, 10);
 console.log(splicedNumbers); // 输出: [1, 9, 10, 4, 5]
 console.log(numbers); // 输出: [1, 2, 3, 4, 5] （原数组未改变）
 ```
+
+<BackTop></BackTop>

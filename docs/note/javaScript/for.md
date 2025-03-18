@@ -28,10 +28,12 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-注意：
+<Alert>
 
 - 可以控制循环方向（如倒序 i--）或跳过某些步骤（如 i += 2）。
 - 支持 break（终止循环）和 continue（跳过当前循环）。
+
+</Alert>
 
 ### for...in
 
@@ -52,11 +54,13 @@ for (let prop in obj) {
 // c 3
 ```
 
-🔴 注意：
+<Alert>
 
 - 遍历数组时可能得到非预期的结果（如索引为字符串，顺序不保证）。
 - 建议用 Object.hasOwnProperty(key) 过滤原型属性：
 - 支持 break 和 continue
+
+</Alert>
 
 ```javascript
 for (const key in obj) {
@@ -97,12 +101,16 @@ for (let char of str) {
 // o
 ```
 
-🔴 注意：
+<Alert>
 
 - 不能直接遍历普通对象（需先转换为 Map 或 Object.keys()）。
 - 支持 break 和 continue。
+
+</Alert>
 
 ## 总结：
 
 1. for...in 循环用于遍历对象的属性名，适用于处理对象结构（慎用原型链）。
 2. for...of 循环用于遍历数组、字符串等可迭代对象。
+
+<BackTop></BackTop>

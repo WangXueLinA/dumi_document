@@ -139,3 +139,5 @@ setTimeout(boundLog, 1000, 'Delayed message'); // 输出：User1: Delayed messag
 
 1. call 和 apply 都是在调用时就立刻执行原函数，只是参数传递方式不同，call 接受的是一个个单独的参数，apply 接收的是一个数组作为参数列表。
 2. bind 并不执行函数，而是创建并返回一个新的函数，这个新函数保持了对其原函数的引用，并且具有预先设定好的 this 值。它可以用于事件处理函数、定时器回调等场合，确保在回调函数执行时 this 指向预期的对象。
+
+<BackTop></BackTop>

@@ -90,3 +90,5 @@ channel.publish('news', 'Latest Update');
 ```
 
 EventChannel 类充当了发布订阅中心的角色，它维护了一个事件对象（events）来储存不同事件和对应处理函数的关联。通过 subscribe 方法订阅事件，unsubscribe 方法取消订阅，而 publish 方法则是触发事件，调用所有订阅了该事件的处理函数。
+
+<BackTop></BackTop>

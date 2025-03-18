@@ -66,9 +66,9 @@ Promise 构造函数接受一个函数作为参数，该函数的两个参数分
 4.  1.  如果异步任务成功，我们调用 resolve(value)，让 Promise 实例对象状态变为成功（fulfilled），同时指定成功的 value
     2.  如果异步任务失败，我们调用 reject(reason)，让 Promise 实例对象状态变为失败（rejected），同时指定失败的 reason
 
-<!---->
+5.  通过 then 方法为 Promise 的实例指定成功、失败的回调函数，来获取成功的 value、失败的 reason。
 
-5.  通过 then 方法为 Promise 的实例指定成功、失败的回调函数，来获取成功的 value、失败的 reason。注意：then 方法所指定的：成功的回调，失败的回调，都是异步的回调
+<Alert message='then 方法所指定的：成功的回调，失败的回调，都是异步的回调'></Alert>
 
 关于状态的注意点
 
@@ -498,7 +498,7 @@ new Promise((resolve, reject) => {
 
 当使用 promise 的 then 链式调用时，可以在最后用 catch 指定一个失败的回调，前面任何操作出了错误，都会传到最后失败的回调中处理
 
-注意：如果不存在 then 的链式调用，就不需要考虑 then 的错误穿透了
+<Alert message='如果不存在 then 的链式调用，就不需要考虑 then 的错误穿透了'></Alert>
 
 ```js
 new Promise((resolve, reject) => {
@@ -676,7 +676,7 @@ value: 成功的数据或 promise 对象
 
 说明: 用于快速返回一个状态为 fulfilled 或 rejected 的 Promise 实例对象
 
-注意：value 的值可能是非 promise 值或者为 Promise 值
+<Alert message='value 的值可能是非 promise 值或者为 Promise 值'></Alert>
 
 ```js
 // 此时就想直接得到成功的值为100，不涉及到异步请求
@@ -705,9 +705,7 @@ p.then(
 );
 ```
 
-**<span style="color:red;">小坑</span>**
-
-Promise.resolve 可以接受非 promise 值，结果就为成功的返回值，若接受为 promise 值，则返回 promise 的成功或者失败的值
+<Alert message="Promise.resolve 可以接受非 promise 值，结果就为成功的返回值，若接受为 promise 值，则返回 promise 的成功或者失败的值"></Alert>
 
 ```js
 const p0 = Promise.resolve(200);
@@ -790,7 +788,7 @@ const p = Promise.all([p1, p2, p3]);
 - 只有 p1、p2、p3 的状态都变成 fulfilled，p 的状态才会变成 fulfilled，此时 p1、p2、p3 的返回值组成一个数组，传递给 p 的回调函数
 - 只要 p1、p2、p3 之中有一个被 rejected，p 的状态就变成 rejected，此时第一个被 reject 的实例的返回值，会传递给 p 的回调函数
 
-注意，如果作为参数的 Promise 实例，自己定义了 catch 方法，那么它一旦被 rejected，并不会触发 Promise.all()的 catch 方法
+<Alert message="如果作为参数的 Promise 实例，自己定义了 catch 方法，那么它一旦被 rejected，并不会触发 Promise.all()的 catch 方法"></Alert>
 
 ```js
 const p1 = new Promise((resolve, reject) => {
@@ -882,3 +880,5 @@ setTimeout(() => resolve('Resolved after 2 seconds'), 2000);
 
 promise.then((value) => console.log(value));
 ```
+
+<BackTop></BackTop>

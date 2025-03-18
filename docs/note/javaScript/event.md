@@ -107,3 +107,5 @@ parentElement.addEventListener('click', function (event) {
 ```
 
 在这个例子中，所有.child-element 和.another-child 类的子元素的点击事件都会冒泡到 parentElement，然后由其上的事件处理器根据 event.target 进行相应的处理。这样，即使子元素数量众多或动态变化，也只需维护 parentElement 上的单一事件监听器。
+
+<BackTop></BackTop>

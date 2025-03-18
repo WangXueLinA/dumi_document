@@ -111,3 +111,5 @@ export default {
 - 开发模式警告: 在开发模式下，Vue 会发出警告来提醒你尝试修改只读属性，但在生产模式下不会阻止修改。
 - 性能考虑: readonly 是递归的，因此对于深层嵌套的对象，可能会有一定的性能开销。shallowReadonly 则不会有这个问题。
 - 不可变性: readonly 和 shallowReadonly 并不会真正阻止对象的修改，它们只是提供了一种机制来提醒开发者不要修改只读属性。
+
+<BackTop></BackTop>

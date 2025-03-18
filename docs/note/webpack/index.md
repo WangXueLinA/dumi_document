@@ -310,7 +310,9 @@ yarn webpack ./src/index.js -o ./build/built.js --mode=production
 
 ## 打包 html 资源
 
-打包 html 文件的时候，我的得下插件为`html-webpack-plugin`，这个包导入一个构造函数 HtmlWebpackPlugin，执行完指令后，在导出文件 build 文件下，我们就看到自动生成了一个名为 index.html 的空文件，自动引入打包输出的所有资源（js/css），这里值得注意的是，loader 仅是下载插件直接就可以配置就可以，而这个插件下载下来之后，必须引入，才进行使用。
+打包 html 文件的时候，我的得下插件为`html-webpack-plugin`，这个包导入一个构造函数 HtmlWebpackPlugin，执行完指令后，在导出文件 build 文件下，我们就看到自动生成了一个名为 index.html 的空文件，自动引入打包输出的所有资源（js/css）。
+
+<Alert message='loader 仅是下载插件直接就可以配置就可以，而这个插件下载下来之后，必须引入，才进行使用。'></Alert>
 
 <ImagePreview src="/images/webpack/image16.png"></ImagePreview>
 
@@ -447,11 +449,13 @@ module: {
 
 ### less-loader
 
-loader 配置的时候值得注意的是，每次配置不同的文件，都得需要配置不同的 loader 来进行处理
+<Alert message="loader 配置的时候，每次配置不同的文件，都得需要配置不同的 loader 来进行处理"></Alert>
 
 <ImagePreview src="/images/webpack/image15.png"></ImagePreview>
 
-经过这几个最基本的配置，你会发现输入文件 build 下 js，其他文件等文件都在一起，没有文件层次划分，我想 js 都放在 js 文件下，图片都放在 img 文件下，这样目录清楚，我们只需要在想要的 loader 下面规定一下`outputPath`属性即可，但是值得注意的是，css 文件夹因为`css-loader`的原因，会将 css 打包在 js 中，所以说样式并不会输出，css 只会跟 js 为一体的
+经过这几个最基本的配置，你会发现输入文件 build 下 js，其他文件等文件都在一起，没有文件层次划分，我想 js 都放在 js 文件下，图片都放在 img 文件下，这样目录清楚，我们只需要在想要的 loader 下面规定一下`outputPath`属性即可。
+
+<Alert message='css 文件夹因为`css-loader`的原因，会将 css 打包在 js 中，所以说样式并不会输出，css 只会跟 js 为一体的'></Alert>
 
 <ImagePreview src="/images/webpack/image22.png"></ImagePreview>
 
@@ -491,7 +495,9 @@ css 做兼容性处理需要一个库，叫 postcss，postcss 这个库要写在
 - @babel/core: babel 核心库
 - @babel-preset-env: babel 的预设，一组 babel 插件的集合
 
-我们在程序中用到的 ES6 语法，有时候在 chorme 浏览器中时看不到什么报错，可能放在 ie 比较低的浏览器，他并不会识别 js 中的 ES6 语法，他会报一堆红错，这时候我们就得做一下 js 的兼容性处理，这时候我们需要`babel-loader`，指示`babel-loader`做怎么样的兼容性处理，需要再下载这两个包`@babel-preset-env` `@babel/core`，这是时候我们注意的是，有时候配置的并不是很对，因为版本一直再更新，我们需要借助文档来进行配置，这点很重要，不然你盲目配置还是会错的
+我们在程序中用到的 ES6 语法，有时候在 chorme 浏览器中时看不到什么报错，可能放在 ie 比较低的浏览器，他并不会识别 js 中的 ES6 语法，他会报一堆红错，这时候我们就得做一下 js 的兼容性处理，这时候我们需要`babel-loader`，指示`babel-loader`做怎么样的兼容性处理，需要再下载这两个包`@babel-preset-env` `@babel/core`。
+
+<Alert message='有时候配置的并不是很对，因为版本一直再更新，我们需要借助文档来进行配置，这点很重要，不然你盲目配置还是会错的'></Alert>
 
 <https://webpack.docschina.org/concepts/>
 
@@ -819,10 +825,14 @@ module.exports = {
 | cheap-source-map        | 生成一个没有列信息（column-mappings）的 SourceMaps 文件，不包含 loader 的 sourcemap（譬如 babel 的 sourcemap） |
 | cheap-module-source-map | 生成一个没有列信息（column-mappings）的 SourceMaps 文件，同时 loader 的 sourcemap 也被简化为只包含对应行的。   |
 
-要注意的是，生产环境我们一般不会开启 sourcemap 功能，主要有两点原因:
+<Alert>
+
+生产环境我们一般不会开启 sourcemap 功能
 
 - 通过 bundle 和 sourcemap 文件，可以反编译出源码,也就是说，线上产物有 soucemap 文件的话，就意味着有暴漏源码的风险。
 - 我们可以观察到，sourcemap 文件的体积相对比较巨大，这跟我们生产环境的追求不同(生产环境追求更小更轻量的 bundle)。
+
+</Alert>
 
 我们通过打包`console.log('hello webpack')`来看看每个属性具体有什么不同
 
@@ -1158,7 +1168,9 @@ import $ from 'jquery';
 console.log($);
 ```
 
-发现打印成功，这说明我们已经在代码中使用它。 注意：我们如何得知{jquery:jQuery}中的'jQuery？其实就是 cdn 里打入到 window 中的变量名，比如 jQuery 不仅有 jQuery 变量名，还有$，那么我们也可以写成这样子：
+发现打印成功，这说明我们已经在代码中使用它。
+
+我们如何得知 { jquery: jQuery } 中的'jQuery？其实就是 cdn 里打入到 window 中的变量名，比如 jQuery 不仅有 jQuery 变量名，还有$，那么我们也可以写成这样子：
 
 ```js
 module.exports= {
@@ -1232,7 +1244,7 @@ worker.onmessage = ({ data: { answer } }) => {
 };
 ```
 
-(import.meta.url 这个参数能够锁定我们当前的这个模块——注意，它不能在 commonjs 中使用。)
+<Alert message='import.meta.url 这个参数能够锁定我们当前的这个模块，它不能在 commonjs 中使用。'></Alert>
 
 这时候我们执行打包命令，会发现,dist 目录下除了 bundle.js 之外，还有另外一个
 xxx.bundle.js!
@@ -1354,7 +1366,7 @@ import { add } from './math.js';
 console.log(add(5, 6));
 ```
 
-注意，我们没有从`src/math.js`模块中`import`另外一个`minus`方法。这个函数就是所谓的“未引用代码(dead code)”，也就是说，应该删除掉未被引用的`export`
+<Alert message='我们没有从`src/math.js`模块中`import`另外一个`minus`方法。这个函数就是所谓的“未引用代码(dead code)”，也就是说，应该删除掉未被引用的`export`'></Alert>
 
 现在运行 `npm run build` ，并查看输出的 bundle：
 
@@ -1970,3 +1982,5 @@ webpack 的运行流程是一个串行的过程，从启动到结束会依次执
 - 初始化：启动构建，读取与合并配置参数，加载 Plugin，实例化 Compiler
 - 编译：从 entry 出发，针对每个 Module 串行调用对应的 loader 去翻译文件的内容，再找到该 Module 依赖的 Module，递归地进行编译处理
 - 输出：将编译后的 Module 组合成 Chunk，将 Chunk 转换成文件，输出到文件系统中
+
+<BackTop></BackTop>

@@ -71,7 +71,7 @@ setup 函数接收 两个参数：
 
 使用场景：需要在子组件中处理父组件传递的数据。
 
-注意：不要直接解构 props，否则会失去响应性。若需解构，使用 toRefs。
+<Alert message='不要直接解构 props，否则会失去响应性。若需解构，使用 toRefs。'></Alert>
 
 ```js
 // ❌ 错误：直接解构会失去响应性
@@ -442,3 +442,5 @@ const logAttrs = () => {
 // 无需返回变量/方法（自动暴露顶层绑定）‌:ml-citation{ref="1,5" data="citationList"}
 </script>
 ```
+
+<BackTop></BackTop>

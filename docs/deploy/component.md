@@ -221,3 +221,5 @@ npm adduser
 然后就可以在 npm 网中可以看到你的包发布成功了
 
 <ImagePreview src="/images/component/image10.jpg"></ImagePreview>
+
+<BackTop></BackTop>

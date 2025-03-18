@@ -175,7 +175,7 @@ const x: bigint = 123n;
 const y: bigint = 0xffffn;
 ```
 
-⚠️ 注意: bigint 与 number 类型不兼容。
+<Alert message='bigint 与 number 类型不兼容。'></Alert>
 
 ```js
 const x: bigint = 123; // 报错
@@ -1580,10 +1580,14 @@ type Api = Record<'get' | 'post', { url: string, type: string }>;
 
 infer 关键字用来定义泛型里面推断出来的类型参数，而不是外部传入的类型参数
 
-**⚠️ 注意:** infer 语法的限制如下：
+<Alert>
+
+infer 语法的限制如下：
 
 - infer 只能在条件类型的 extends 子句中使用
 - infer 得到的类型只能在 true 语句中使用, 即 X 中使用
+
+</Alert>
 
 ```js
 // 推断函数的参数类型和返回值类型。
@@ -2151,3 +2155,5 @@ const b: Obj2 = { name: 'xiaohong' };
 let c: Record<string, string> = a;
 let d: Record<string, string> = b; //报错： Type 'Obj2' is not assignable to type 'Record<string, string>'.Index signature for type 'string' is missing in type 'Obj2'
 ```
+
+<BackTop></BackTop>

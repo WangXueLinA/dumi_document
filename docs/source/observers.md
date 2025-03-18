@@ -105,3 +105,5 @@ weatherService.setWeather('多云');
 ```
 
 WeatherService 是被观察者，当天气状态发生变化时，它会通知所有的观察者（在这里是 EmailWeatherObserver 和 SMSWeatherObserver）。每个观察者都实现了 update 方法，用于在接收到天气更新时执行相应的通知逻辑。
+
+<BackTop></BackTop>

@@ -148,3 +148,5 @@ console.log(Object.prototype.__proto__ === null); // true
 所以查找属性的时候查到 Object.prototype 就可以停止查找了。
 
 <ImagePreview src="/images/js/image6.jpg"></ImagePreview>
+
+<BackTop></BackTop>

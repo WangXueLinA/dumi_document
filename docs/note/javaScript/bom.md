@@ -138,3 +138,5 @@ history.go(-1); //向后跳转一个记录
 - history.forward()：向前跳转一个页面
 - history.back()：向后跳转一个页面
 - history.length：获取历史记录数
+
+<BackTop></BackTop>

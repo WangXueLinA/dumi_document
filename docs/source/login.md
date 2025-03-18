@@ -179,9 +179,7 @@ app.listen(3000, () => console.log('服务监听在3000端口'));
 
 前端也可以通过 js-cookie 库来对 cookie 进行保护，可以直接删除 cookie 或者拿到 cookie 值
 
-<video width="800" height="350" controls>
-  <source src="/mp4/session.mp4" type="video/mp4">
-</video>
+<Player src='/mp4/session.mp4'></Player>
 
 ### 优势
 
@@ -486,9 +484,7 @@ app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000, () => console.log('服务端口3000启动成功'));
 ```
 
-<video width="800" height="350" controls>
-    <source src="/mp4/token.mp4" type="video/mp4">
-</video>
+<Player src='/mp4/token.mp4'></Player>
 
 ### 优势
 
@@ -502,7 +498,9 @@ app.listen(3000, () => console.log('服务端口3000启动成功'));
 
 3. 防伪造，安全！
 
-Token 自带签名（比如用密码或公私钥），篡改立刻被发现。但注意：内容默认是明文（能看到用户 ID 等），想加密得额外操作。
+Token 自带签名（比如用密码或公私钥），篡改立刻被发现。
+
+<Alert message='内容默认是明文（能看到用户 ID 等），想加密得额外操作。'></Alert>
 
 4. 灵活
 
@@ -678,3 +676,5 @@ axios.interceptors.response.use(
   },
 );
 ```
+
+<BackTop></BackTop>

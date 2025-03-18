@@ -76,9 +76,17 @@
 //   color: #8590a0 !important;
 // }
 
+.ant-timeline-item-content {
+  color: darkcyan !important;
+}
+
+.ant-timeline-item-head-custom {
+  background-color: transparent !important;
+}
+
 .ant-notification-notice {
   width: max-content;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 210px);
   overflow: scroll !important;
   width: max-content !important;
   background-image: url('../../public/bg.jpg');
@@ -86,6 +94,11 @@
   background-position: center; /* 居中显示 */
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: overlay;
+
+  .ant-notification-notice-message,
+  .ant-notification-notice-description {
+    color: darkcyan !important;
+  }
 
   @media @mobile {
     height: calc(100vh-140px);
@@ -250,4 +263,13 @@
   .ant-col-8 {
     max-width: 100%;
   }
+}
+
+.float-button-homeTip {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 80px;
 }

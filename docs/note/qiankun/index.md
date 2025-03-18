@@ -868,7 +868,9 @@ export async function mount(props) {
 
 通过 localStorage 存储数据，结合 storage 事件监听变化。
 
-🔴 注意：在微前端架构中，多个子应用运行在同一浏览器上下文中，共享 localStorage、sessionStorage 和 window 等全局资源。若直接使用原生存储 API 会导致：
+<Alert message='在微前端架构中，多个子应用运行在同一浏览器上下文中，共享 localStorage、sessionStorage 和 window 等全局资源。'></Alert>
+
+若直接使用原生存储 API 会导致：
 
 | 问题场景     | 具体表现                                                                         |
 | ------------ | -------------------------------------------------------------------------------- |
@@ -899,3 +901,5 @@ const data = JSON.parse(localStorage.getItem('shared-data'));
 // 子应用修改数据
 localStorage.setItem('shared-data', JSON.stringify({ key: 'new-value' }));
 ```
+
+<BackTop></BackTop>

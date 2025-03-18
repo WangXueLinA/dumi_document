@@ -79,8 +79,11 @@ const OperationGroup: React.FC<Props> = ({
 
   useEffect(() => {
     if (container.current && resizeConfig) {
+      console.log(container.current, resizeObserver?.current?.unobserve);
       resizeObserver.current.observe(container.current);
-      return () => resizeObserver.current.unobserve(container.current!);
+      return () =>
+        container.current &&
+        resizeObserver?.current?.unobserve(container.current!);
     }
     setCount(_count);
   }, [resizeConfig]);

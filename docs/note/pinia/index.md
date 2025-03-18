@@ -631,3 +631,5 @@ persist: {
 ```
 
 上面我们只持久化 name 和 age，并将其改为 localStorage, 而 gender 不会被持久化，如果其状态发生更改，页面刷新时将会丢失，重新回到初始状态，而 name 和 age 则不会。
+
+<BackTop></BackTop>

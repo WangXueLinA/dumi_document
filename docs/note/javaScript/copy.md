@@ -76,7 +76,9 @@ deepCopyObj.details.address.city = 'Los Angeles';
 // 此时，obj.details.address.city 仍为 "New York"
 ```
 
-- 序列化反序列化法：使用 JSON.stringify()将对象转化为字符串，然后再使用 JSON.parse()将字符串转化为新的对象。这种方法的限制是它不能处理函数和循环引用的情况。⚠️ 注意，当属性值内包含 undefined 不好用
+- 序列化反序列化法：使用 JSON.stringify()将对象转化为字符串，然后再使用 JSON.parse()将字符串转化为新的对象。这种方法的限制是它不能处理函数和循环引用的情况。
+
+<Alert message="当属性值内包含 undefined 不好用"></Alert>
 
 ```js
 let deepCopyObj = JSON.parse(JSON.stringify(obj));
@@ -90,3 +92,5 @@ deepCopyObj.details.address.city = 'Los Angeles';
 import _ from 'lodash';
 const deep = _.cloneDeep(obj);
 ```
+
+<BackTop></BackTop>

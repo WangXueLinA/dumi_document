@@ -263,7 +263,9 @@ socket.addEventListener('close', (event) => {
 npm install ws
 ```
 
-然后创建一个简单的 WebSocket 服务器，允许来自任何源的连接（注意：在生产环境中，出于安全考虑，应当明确指定允许的源）：
+然后创建一个简单的 WebSocket 服务器，允许来自任何源的连接
+
+<Alert message='在生产环境中，出于安全考虑，应当明确指定允许的源'></Alert>
 
 ```js
 // server.js
@@ -395,3 +397,5 @@ HTML5 引入的 window.postMessage 方法允许来自不同源的脚本采用异
 
 总结
 每种跨域解决方案都有其适用场景和局限性，开发者应根据实际需求选择最适合的方案。CORS 由于其灵活性和安全性，成为了现代 Web 开发中最常用的跨域解决方案。
+
+<BackTop></BackTop>

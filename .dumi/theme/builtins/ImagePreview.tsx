@@ -1,3 +1,4 @@
+// 点击图片放大组件
 import { type FC, useState } from 'react';
 import Viewer from 'react-viewer';
 

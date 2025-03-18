@@ -11,7 +11,7 @@ title: var/let/const
 
 在 ES5 中，顶层对象的属性和全局变量是等价的，用 var 声明的变量既是全局变量，也是顶层变量
 
-注意：顶层对象，在浏览器环境指的是 window 对象，在 Node 指的是 global 对象
+<Alert message='顶层对象，在浏览器环境指的是 window 对象，在 Node 指的是 global 对象'></Alert>
 
 ```js
 var a = 10;
@@ -105,7 +105,7 @@ let a = 30;
 // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 
-注意的是相同作用域，下面这种情况是不会报错的
+<Alert message='相同作用域，下面这种情况是不会报错的'></Alert>
 
 ```js
 let a = 20;
@@ -280,3 +280,5 @@ const c = 10;
 c = 20;
 console.log(c); // Uncaught TypeError: Assignment to constant variable
 ```
+
+<BackTop></BackTop>

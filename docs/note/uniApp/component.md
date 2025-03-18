@@ -13,7 +13,7 @@ view： https://uniapp.dcloud.net.cn/component/view.html
 
 它类似于传统 html 中的 div，用于包裹各种元素内容。
 
-如果使用[nvue](https://uniapp.dcloud.io/tutorial/nvue-outline)，则需注意，包裹文字应该使用`<text>`组件。
+<Alert message='如果使用nvue则包裹文字应该使用`<text>`组件。'></Alert>
 
 **属性说明**
 
@@ -78,7 +78,7 @@ scroll-view：https://uniapp.dcloud.net.cn/component/scroll-view.html
 
 可滚动视图区域。用于区域滚动。
 
-需注意在 webview 渲染的页面中，区域滚动的性能不及页面滚动。
+<Alert message="在 webview 渲染的页面中，区域滚动的性能不及页面滚动"></Alert>
 
 ```vue
 <template>
@@ -121,7 +121,7 @@ swiper ：https://uniapp.dcloud.net.cn/component/swiper.html
 
 一般用于左右滑动或上下滑动，比如 banner 轮播图。
 
-注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换。swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间。
+<Alert message='滑动切换和滚动的区别，滑动切换是一屏一屏的切换。swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间。'></Alert>
 
 ```vue
 <template>
@@ -335,3 +335,5 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 | 缩放 | aspectFill  | 保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。 |
 | 缩放 | widthFix    | 宽度不变，高度自动变化，保持原图宽高比不变                                                                                 |
 | 缩放 | heightFix   | 高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3**           |
+
+<BackTop></BackTop>

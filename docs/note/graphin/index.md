@@ -93,3 +93,5 @@ demo 演示： https://stackblitz.com/edit/stackblitz-starters-h5ba6z?file=src%2
 Graphin 提供了 7 种分析组件：分别为右键菜单，提示框，小地图，工具栏，鱼眼放大镜，轮廓，图例。未来将提供 17+ 的分析组件
 
 demo 演示：https://stackblitz.com/edit/stackblitz-starters-kqwvei?file=src%2FApp.js
+
+<BackTop></BackTop>

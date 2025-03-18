@@ -73,7 +73,7 @@ createWebHistory('/folder/'); // 给出的网址为 https://example.com/folder/
 
 对于没有主机的 web 应用程序 (例如 file://)，或当配置服务器不能处理任意 URL 时这非常有用
 
-注意：如果 SEO 对你很重要，你应该使用 createWebHistory
+<Alert message="如果 SEO 对你很重要，你应该使用 createWebHistory"></Alert>
 
 提供一个可选的 base，默认是 location.pathname + location.search。如果 head 中有一个 `<base>`，它的值将被忽略，而采用这个参数。但请注意它会影响所有的 history.pushState() 调用，这意味着如果你使用一个 `<base>` 标签，它的 href 值必须与这个参数相匹配 (请忽略 # 后面的所有内容)
 
@@ -312,3 +312,5 @@ export default {
 ## 对 vue-router3 改动
 
 https://router.vuejs.org/zh/guide/migration/
+
+<BackTop></BackTop>

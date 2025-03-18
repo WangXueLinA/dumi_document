@@ -143,7 +143,7 @@ export default {
 
 通过 vuex 提供的 mapState 简化状态映射，适用于需要获取多个状态的场景
 
-注意： 使用了 mapState 方法后，computed 的写法有点区别，比如默认情况你的 computed 属性是这样写的
+<Alert message="使用了 mapState 方法后，computed 的写法有点区别，比如默认情况你的 computed 属性是这样写的"></Alert>
 
 ```js
 export default {
@@ -489,8 +489,12 @@ export default {
 
 这个主要是说你再开发过程中需要向 state 里面添加额外数据时，需要遵循响应准则。 Vuex 中的 mutation 也需要与使用 Vue 一样遵守一些注意事项：
 
+<Alert>
+
 - 最好提前在你的 store 中初始化好所有所需属性。
 - 当需要在对象上添加新属性时，你应该使用 `Vue.set(obj, 'newProp', 123)`, 或者以新对象替换老对象。例如，利用 对象展开运算符
+
+</Alert>
 
 ```js
 // 我打算再这儿添加新的属性到state
@@ -826,3 +830,5 @@ new Vue({
   render: (h) => h(App),
 }).$mount('#app');
 ```
+
+<BackTop></BackTop>

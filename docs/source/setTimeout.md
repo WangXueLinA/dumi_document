@@ -32,7 +32,7 @@ setIntervalWithTimeout(sayHello, 1000);
 
 setIntervalWithTimeout 函数接收两个参数：一个是需要周期性执行的函数 fn，另一个是执行间隔时间 delay（以毫秒为单位）。这个函数内部定义了一个 execute 函数，它首先执行传入的函数 fn，然后通过 setTimeout 在给定的延迟时间 delay 后再次调用自己，形成了一个循环执行的效果。
 
-需要注意的是，使用这种方法时，如果想停止循环执行，需要额外的逻辑来清除定时器，这与直接使用 clearInterval 清除由 setInterval 创建的定时器不同。要实现 clearInterval 的功能，你可以在 setIntervalWithTimeout 函数中返回一个可以用来清除定时器的函数，
+<Alert message="使用这种方法时，如果想停止循环执行，需要额外的逻辑来清除定时器，这与直接使用 clearInterval 清除由 setInterval 创建的定时器不同。要实现 clearInterval 的功能，你可以在 setIntervalWithTimeout 函数中返回一个可以用来清除定时器的函数。"></Alert>
 
 ```js
 function setIntervalWithTimeout(fn, delay) {
@@ -58,3 +58,5 @@ const stopExecution = setIntervalWithTimeout(() => console.log('Tick'), 1000);
 // 在适当的时候调用stopExecution来停止执行
 // stopExecution();
 ```
+
+<BackTop></BackTop>

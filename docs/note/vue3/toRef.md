@@ -108,3 +108,5 @@ export default {
 1. toRef 和 toRefs 只能用于响应式对象：如果尝试将它们用于普通对象，Vue 会抛出警告，并且返回的 ref 对象不会具有响应式特性。
 2. toRef 和 toRefs 返回的 ref 对象是只读的：虽然你可以修改 ref 对象的值，但你不能直接替换整个 ref 对象。例如，`count = ref(10)` 是不允许的。
 3. toRefs 会丢失响应式对象的原型链：toRefs 返回的是一个普通对象，因此它会丢失原响应式对象的原型链方法。
+
+<BackTop></BackTop>

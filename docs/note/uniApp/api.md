@@ -21,7 +21,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 非 web 端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
 
-请注意不要把浏览器里的 js 等价于标准 js。
+<Alert message="不要把浏览器里的 js 等价于标准 js"></Alert>
 
 所以 uni-app 的 web 端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
 
@@ -351,11 +351,13 @@ onLoad: function(option) {
 }
 ```
 
-**注意：**
+<Alert>
 
 - 页面跳转路径有层级限制，不能无限制跳转新页面
 - 跳转到 tabBar 页面只能使用 switchTab 跳转
 - 路由 API 的目标页面必须是在 pages.json 里注册的 vue 页面。如果想打开 web url，在 App 平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或 web-view 组件；H5 平台使用 window.open；小程序平台使用 web-view 组件（url 需在小程序的联网白名单中）。在 hello uni-app 中有个组件 ulink.vue 已对多端进行封装，可参考。
+
+</Alert>
 
 ### 2. uni.redirectTo
 
@@ -378,17 +380,13 @@ uni.redirectTo({
 });
 ```
 
-复制代码
-
-**注意：**
-
-- 跳转到 tabBar 页面只能使用 switchTab 跳转
+<Alert message='跳转到 tabBar 页面只能使用 switchTab 跳转'></Alert>
 
 ### 3. uni.reLaunch
 
 关闭所有页面，打开到应用内的某个页面。
 
-**注意：** 如果调用了 [uni.preloadPage](https://uniapp.dcloud.net.cn/api/preload-page)不会关闭，仅触发生命周期 `onHide`
+<Alert message='如果调用了 uni.preloadPage 不会关闭，仅触发生命周期 `onHide`'></Alert>
 
 **OBJECT 参数说明**
 
@@ -423,7 +421,7 @@ Tips：
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
 
-**注意：** 如果调用了 [uni.preloadPage](https://uniapp.dcloud.net.cn/api/preload-page)不会关闭，仅触发生命周期 `onHide`
+<Alert message='如果调用了 uni.preloadPage 不会关闭，仅触发生命周期 `onHide`'></Alert>
 
 **OBJECT 参数说明**
 
@@ -567,9 +565,7 @@ try {
 }
 ```
 
-**注意**
-
-- `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的 key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为 key 命名时避开这些前缀。
+<Alert message='`uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的 key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为 key 命名时避开这些前缀。'></Alert>
 
 ### 2. uni.getStorageSync
 
@@ -628,7 +624,7 @@ try {
 }
 ```
 
-**注意**
+<Alert>
 
 uni-app 的 Storage 在不同端的实现不同：
 
@@ -636,6 +632,8 @@ uni-app 的 Storage 在不同端的实现不同：
 - App 端为原生的 plus.storage，无大小限制，不是缓存，是持久化的
 - 各个小程序端为其自带的 storage api，数据存储生命周期跟小程序本身一致，即除用户主动删除或超过一定时间被自动清理，否则数据都一直可用。
 - 微信小程序单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。
+
+</Alert>
 
 ## 界面交互
 
@@ -868,11 +866,13 @@ export default {
 };
 ```
 
-**注意**
+<Alert>
 
 - 支付宝小程序`startPullDownRefresh`在开发者工具里会提示`暂未开放，请勿使用`
 - 支付宝小程序`startPullDownRefresh`请使用真机调试（非真机预览）
 - 后续支付宝小程序开发工具更新可能会有所修改
+
+</Alert>
 
 ## 页面和窗体
 
@@ -882,10 +882,12 @@ export default {
 
 `getCurrentPages()` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
 
-**注意：**
+<Alert>
 
 - `getCurrentPages()`仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。
 - 不要在 App.onLaunch 的时候调用 getCurrentPages()，此时 page 还没有生成。(要在方法里或者 onshow 里写，将此页面存入栈空间)
+
+</Alert>
 
 每个页面实例的方法属性列表：
 
@@ -953,11 +955,13 @@ const app = getApp();
 console.log(app.globalData);
 ```
 
-**注意：**
+<Alert>
 
 - 不要在定义于 `App()` 内的函数中，或调用 `App` 前调用 `getApp()` ，可以通过 `this.$scope` 获取对应的 app 实例
 - 通过 `getApp()` 获取实例之后，不要私自调用生命周期函数。
 - 当在首页`nvue`中使用`getApp()`不一定可以获取真正的`App`对象。对此提供了`const app = getApp({allowDefault: true})`用来获取原始的`App`对象，可以用来在首页对`globalData`等初始化
+
+</Alert>
 
 ### 页面通讯
 
@@ -1080,8 +1084,12 @@ export default {
 };
 ```
 
-**注意事项**
+<Alert>
 
 - uni.$emit、 uni.$on 、 uni.$once 、uni.$off 触发的事件都是 App 全局级别的，跨任意组件，页面，nvue，vue 等
-- 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
-- 注意 uni.$on 定义完成后才能接收到 uni.$emit 传递的数据
+- 使用时，及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
+- uni.$on 定义完成后才能接收到 uni.$emit 传递的数据
+
+</Alert>
+
+<BackTop></BackTop>

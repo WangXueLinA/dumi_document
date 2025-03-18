@@ -180,3 +180,5 @@ Vue.component('GlobalTransition', GlobalTransition);
   <div v-if="show">复用过渡效果的内容</div>
 </GlobalTransition>
 ```
+
+<BackTop></BackTop>

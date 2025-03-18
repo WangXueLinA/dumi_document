@@ -34,3 +34,5 @@ function myInstanceof(left, right) {
 ```
 
 以上代码实现了 instanceof 的基本功能，通过递归地遍历 left 的原型链，直至找到 right.prototype 或到达原型链尽头
+
+<BackTop></BackTop>

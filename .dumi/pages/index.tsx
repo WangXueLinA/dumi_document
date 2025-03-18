@@ -1,7 +1,9 @@
-import { Card, Col, FloatButton, Row, Tabs, notification } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
+import { FloatButton, notification, Tabs, Timeline } from 'antd';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import commits from '../git-commits.json';
+import SideTab from '../SideTab';
 import { toolsArr } from '../utils';
 import './index.less';
 
@@ -15,12 +17,17 @@ export default () => {
 
   const openNotification = () => {
     api.open({
-      message: '文档更新记录',
-      description: commits.map((item) => (
-        <p>
-          {item.date} ---{item.message}
-        </p>
-      )),
+      message: '文档更新记录🔥🔥🔥🔥',
+      description: (
+        <Timeline
+          items={commits.map((item) => ({
+            children: `${item.date} --- ${item.message}`,
+            color: 'darkcyan',
+            dot: <SmileOutlined />,
+          }))}
+          style={{ marginTop: 25 }}
+        />
+      ),
     });
   };
 
@@ -75,31 +82,12 @@ export default () => {
           };
         })}
       />
+      <SideTab />
 
-      <Row gutter={16}>
-        <Col span={8}>
-          <Card title="vpn" bordered={false}>
-            <p>
-              <a
-                href="https://xn--mesr8b36x.com/#/register?code=FOsrvwQ5"
-                target="_blank"
-              >
-                大机场
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.zhuiyun.life/#/register?code=cUv2zLTe"
-                target="_blank"
-              >
-                追云加速器
-              </a>
-            </p>
-          </Card>
-        </Col>
-      </Row>
-
-      <FloatButton onClick={openNotification}></FloatButton>
+      <FloatButton
+        onClick={openNotification}
+        icon={<img src="/homeTip.gif" className="float-button-homeTip" />}
+      ></FloatButton>
     </>
   );
 };

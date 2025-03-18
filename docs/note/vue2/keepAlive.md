@@ -168,3 +168,5 @@ const cache = this.$parent.$children.find((child) =>
 ).cache;
 delete cache['ComponentA'];
 ```
+
+<BackTop></BackTop>

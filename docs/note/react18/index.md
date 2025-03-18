@@ -152,7 +152,7 @@ React18 默认开启批处理来实现性能提升
 
 <https://codepen.io/wangxuelina/pen/OJoEVQR>
 
-注意：以下例子还会在 React 18 中执行两次 render：
+<Alert message='以下例子还会在 React 18 中执行两次 render'></Alert>
 
 <https://codepen.io/wangxuelina/pen/QWVxbBq>
 
@@ -486,3 +486,5 @@ react18 后也会渲染两次，不过有一次时置灰的状态，便于区分
 ### 场景 demo
 
 <https://codepen.io/wangxuelina/pen/vYzaozR>
+
+<BackTop></BackTop>

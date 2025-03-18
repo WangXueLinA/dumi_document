@@ -49,3 +49,5 @@ if (window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
   console.log('==> vue devtools now is enabled');
 }
 ```
+
+<BackTop></BackTop>

@@ -210,7 +210,7 @@ Vue 自动为需要浏览器前缀的 CSS 属性添加前缀。
 
 scoped 是 Vue.js 单文件组件中 `<style>` 标签的一个属性，用于 ‌ 限制样式仅作用于当前组件 ‌，避免全局样式污染。
 
-‌ 注意 ‌：Vue 3 已废弃 scoped，推荐使用 CSS Modules 或 CSS-in-JS 方案替代，但 Vue 2 中仍广泛使用。
+<Alert message="Vue 3 已废弃 scoped，推荐使用 CSS Modules 或 CSS-in-JS 方案替代，但 Vue 2 中仍广泛使用。"></Alert>
 
 ```vue
 <template>
@@ -395,7 +395,7 @@ v-model 本质上是语法糖，v-model 默认会解析成名为 value 的 prop 
 
 作用：实现多分支条件逻辑，必须紧跟在 v-if 或 v-else-if 后。
 
-⚠️ 注意：中间不能插入其他元素。
+<Alert message='中间不能插入其他元素。'></Alert>
 
 ```html
 <div v-if="type === 'A'">类型 A</div>
@@ -836,7 +836,7 @@ Vue2 无法检测 的数组操作，以下操作 不会触发视图更新
 
 1. 使用 Vue.set 或 vm.$set
 
-⚠️ 注意： Vue.set 或 vm.$set 不能给 vm 或 vm 的根数据对象 添加属性！！！
+<Alert message='Vue.set 或 vm.$set 不能给 vm 或 vm 的根数据对象 添加属性'></Alert>
 
 ```js
 // ✅ 正确：通过 Vue.set 修改元素
@@ -845,7 +845,7 @@ Vue.set(this.items, index, newItem);
 this.$set(this.items, index, newItem);
 ```
 
-2. 重新赋值整个数组
+1. 重新赋值整个数组
 
 适用于非变异方法（如 filter、concat、slice）：
 
@@ -1186,3 +1186,5 @@ Vue.directive('tooltip', {
 // 使用
 <div v-tooltip="{ text: '提示内容', position: 'top' }"></div>;
 ```
+
+<BackTop></BackTop>

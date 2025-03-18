@@ -78,7 +78,7 @@ getPoint();
 // {x:1, y:10}
 ```
 
-注意：简写的对象方法不能用作构造函数，否则会报错
+<Alert message='简写的对象方法不能用作构造函数，否则会报错'></Alert>
 
 ```js
 const obj = {
@@ -119,7 +119,7 @@ let obj = {
 obj.hello(); // hi
 ```
 
-注意，属性名表达式与简洁表示法，不能同时使用，会报错
+<Alert message='属性名表达式与简洁表示法，不能同时使用，会报错'></Alert>
 
 ```js
 // 报错
@@ -132,7 +132,7 @@ const foo = 'bar';
 const baz = { [foo]: 'abc'};
 ```
 
-注意，属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串[object Object]
+<Alert message='属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串[object Object]'></Alert>
 
 ```js
 const keyA = { a: 1 };
@@ -182,7 +182,7 @@ const { name, age } = user;
 console.log(name, age); // "Eve" 28
 ```
 
-注意：解构赋值必须是最后一个参数，否则会报错
+<Alert message='解构赋值必须是最后一个参数，否则会报错'></Alert>
 
 解构赋值是浅拷贝
 
@@ -211,7 +211,7 @@ Object.assign(target, source1, source2);
 target; // {a:1, b:2, c:3}
 ```
 
-注意：Object.assign()方法是浅拷贝，遇到同名属性会进行替换
+<Alert message='Object.assign()方法是浅拷贝，遇到同名属性会进行替换'></Alert>
 
 ### keys
 
@@ -304,3 +304,5 @@ const obj = {
 Object.setPrototypeOf(obj, proto); // 为obj设置原型对象
 obj.find(); // "hello"
 ```
+
+<BackTop></BackTop>

@@ -423,3 +423,5 @@ props.foo // string
 props.bar // number | undefined
 </script>
 ```
+
+<BackTop></BackTop>

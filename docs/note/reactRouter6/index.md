@@ -356,7 +356,7 @@ function Messages() {
 
 现在，当用户导航到 `/messages` 时， React Router 会呈现 Messages 组件。Messages 组件中通过 Conversations 组件来显示消息列表，然后使用将 `/messages/:id` 映射到 Chat 组件的 Route 来渲染另一个 Routes。
 
-⚠️ 注意： 这里不必在嵌套路由中包含完整的 `/messages/:id` 路径，因为 Routes 是很智能的，当省略了前导 /，就会认为这条路径是相对于父级 /messages 的。
+<Alert message='这里不必在嵌套路由中包含完整的 `/messages/:id` 路径，因为 Routes 是很智能的，当省略了前导 /，就会认为这条路径是相对于父级 /messages 的。'></Alert>
 
 如果只是将路径修改为 /messages/\*会怎样呢？
 
@@ -538,3 +538,5 @@ export default function App() {
   );
 }
 ```
+
+<BackTop></BackTop>

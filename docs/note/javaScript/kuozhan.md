@@ -59,7 +59,7 @@ const arr3 = ['d', 'e'];
 // [ 'a', 'b', 'c', 'd', 'e' ]
 ```
 
-注意：通过扩展运算符实现的是浅拷贝，修改了引用指向的值，会同步反映到新数组
+<Alert message='通过扩展运算符实现的是浅拷贝，修改了引用指向的值，会同步反映到新数组'></Alert>
 
 下面看个例子就清楚多了
 
@@ -125,3 +125,5 @@ let arr = [...map.keys()]; // [1, 2, 3]
 const obj = { a: 1, b: 2 };
 let arr = [...obj]; // TypeError: Cannot spread non-iterable object
 ```
+
+<BackTop></BackTop>

@@ -144,3 +144,5 @@ customGreeting('Jane'); // 输出：Hello, John! Today is a afternoon. Your name
 ```
 
 myBind 方法接受一个 context 参数（即将成为新函数调用时的 this）和一系列预设参数 boundArgs。它返回一个新的函数，该函数内部封装了 apply 方法来调整 this 的上下文并传递参数。这样，当你调用返回的新函数时，它实际上就是在预先设定的 context 下调用了原始函数，并传入了绑定和即时传入的所有参数。
+
+<BackTop></BackTop>

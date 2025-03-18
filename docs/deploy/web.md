@@ -73,3 +73,5 @@ bt default
 用导入成功后，再次查看网站，此时已经成功
 
 <ImagePreview src="/images/web/image12.jpg"></ImagePreview>
+
+<BackTop></BackTop>

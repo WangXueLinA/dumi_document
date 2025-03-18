@@ -347,3 +347,5 @@ this.$set(this.list, 0, 100); // ✅ 触发更新
 ```
 
 更暴力一点的方式是 vue 提供`vm.$forceUpdate()`函数强制组件重新渲染，尽量避免滥用
+
+<BackTop></BackTop>

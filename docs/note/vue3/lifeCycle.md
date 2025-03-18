@@ -25,3 +25,5 @@ order: -94
 | errorCaptured | onErrorCaptured   | 捕获子组件传递的错误时调用，可用于错误上报。                                             | Vue3 中需显式导入，可返回 false 阻止错误继续传播。                |
 | -             | onRenderTracked   | Vue3 新增：调试渲染依赖的响应式数据变化。                                                | 仅在开发模式下有效，用于追踪渲染过程中的依赖收集。                |
 | -             | onRenderTriggered | Vue3 新增：调试响应式数据触发组件重新渲染时的具体变化。                                  | 开发工具，用于定位性能问题或意外渲染。                            |
+
+<BackTop></BackTop>

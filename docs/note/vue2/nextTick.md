@@ -150,3 +150,5 @@ setTimeout(() => { ... }, 0);
 // ✅ 可靠（保证 DOM 更新后执行）
 this.$nextTick(() => { ... });
 ```
+
+<BackTop></BackTop>

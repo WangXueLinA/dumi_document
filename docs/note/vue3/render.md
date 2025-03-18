@@ -244,3 +244,5 @@ h(ChildComponent, {
   'onUpdate:title': (val) => emit('update:title', val),
 });
 ```
+
+<BackTop></BackTop>

@@ -386,3 +386,5 @@ demo: [react 中使用 web Component](https://stackblitz.com/edit/vitejs-vite-uc
 - 数据绑定：Web Components 的数据绑定机制不如某些框架自动化，通常需要手动处理属性绑定和事件监听。
 - 抽象层次：现代框架提供了更多高级抽象层，比如 React 的函数式编程模型和 Vue 的响应式系统，简化了许多复杂任务。
 - 工具链支持：框架通常配有强大的构建工具、热重载、类型检查等工具链支持，而 Web Components 在开发过程中可能需要搭配其他工具才能获得类似的功能。
+
+<BackTop></BackTop>

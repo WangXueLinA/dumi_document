@@ -378,7 +378,7 @@ wm.set(element, 'some information');
 wm.get(element); // "some information"
 ```
 
-注意：WeakMap 弱引用的只是键名，而不是键值。键值依然是正常引用
+<Alert message='WeakMap 弱引用的只是键名，而不是键值。键值依然是正常引用'></Alert>
 
 下面代码中，键值 obj 会在 WeakMap 产生新的引用，当你修改 obj 不会影响到内部
 
@@ -392,3 +392,5 @@ obj = null;
 wm.get(key);
 // Object {foo: 1}
 ```
+
+<BackTop></BackTop>
